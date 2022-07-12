@@ -12,8 +12,11 @@ if (isset($_POST['paynow'])) {
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $response = curl_exec($ch);
         curl_close($ch);
-	//$response = json_decode($response);
+	$response = json_decode($response);
+	$key = 'access_token';
+	$access_token = $response[$key];
         echo $response;
+	echo $access_token;
 
 
 	echo("Hello " . $name . '<br>Your Phone number is ' . $phone . ' and your access token is ' . $response->access_token);
