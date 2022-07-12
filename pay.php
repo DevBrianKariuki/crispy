@@ -12,6 +12,7 @@ if (isset($_POST['paynow'])) {
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $response = curl_exec($ch);
         curl_close($ch);
+	$response = json_decode($response);
         echo $response;
 
 
