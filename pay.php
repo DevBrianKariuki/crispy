@@ -15,7 +15,7 @@ if (isset($_POST['paynow'])) {
         echo $response;
 
 
-	echo("Hello " . $name . '<br>Your Phone number is ' . $phone . ' and your access token is ' . $response);
+	echo("Hello " . $name . '<br>Your Phone number is ' . $phone . ' and your access token is ' . $response->access_token);
 }else {
 	header('Location: index.php');
 }
